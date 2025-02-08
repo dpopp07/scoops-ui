@@ -14,7 +14,7 @@ export function Routes() {
     <Router>
       <Switch>
         <Route path="/" component={Landing} />
-        <Route path="/recipe" component={RecipeDetails} />
+        <Route path="/recipes/:id" component={RecipeDetails} />
         <Route>
           <Custom404 />
         </Route>
