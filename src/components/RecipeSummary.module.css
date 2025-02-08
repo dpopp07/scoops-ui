@@ -1,0 +1,22 @@
+.recipeSummary {
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+}
+
+.description {
+  /*!!! no good - not responsive. need a relative way of doing this */
+  width: 70ch;
+  font-size: 1.25rem;
+}

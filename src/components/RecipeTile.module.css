@@ -1,0 +1,11 @@
+.recipe {
+  border: solid 0.15rem;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.title {
+  font-weight: bold;
+}
