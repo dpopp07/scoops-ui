@@ -2,6 +2,7 @@ import { Route, Router, Switch } from 'wouter';
 import Landing from './pages/Landing';
 import RecipeDetails from './pages/RecipeDetails';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 /*
     !!!
@@ -18,13 +19,9 @@ export function Routes() {
         <Route path="/recipes/:id" component={RecipeDetails} />
         <Route path="/about" component={About} />
         <Route>
-          <Custom404 />
+          <NotFound />
         </Route>
       </Switch>
     </Router>
   );
-}
-
-function Custom404() {
-  return <div>Page not found</div>;
 }
