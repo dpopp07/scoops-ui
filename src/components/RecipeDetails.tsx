@@ -3,11 +3,11 @@ import { useParams } from 'wouter';
 
 import classes from './RecipeDetails.module.css';
 
-import BackButton from '../components/BackButton';
-import MainHeader from '../components/MainHeader';
-import RecipeOrderedList from '../components/RecipeOrderedList';
-import RecipeSummary from '../components/RecipeSummary';
-import RecipeUnorderedList from '../components/RecipeUnorderedList';
+import BackButton from './BackButton';
+import RecipeOrderedList from './RecipeOrderedList';
+import RecipeSummary from './RecipeSummary';
+import RecipeUnorderedList from './RecipeUnorderedList';
+import Loader from './Loader';
 
 interface RecipeIngredient {
   name: string;
@@ -47,38 +47,30 @@ export default function RecipeDetails() {
   }, [id]);
 
   if (isLoading) {
-    return (
-      <>
-        <MainHeader />
-        <p> Loading... </p>
-      </>
-    );
+    return <Loader />;
   }
 
   return (
-    <>
-      <MainHeader />
-      <section className={classes.recipeDetails}>
-        <BackButton />
+    <section className={classes.recipeDetails}>
+      <BackButton />
 
-        {/* Summary */}
-        <RecipeSummary name={recipe.name} description={recipe.description} />
+      {/* Summary */}
+      <RecipeSummary name={recipe.name} description={recipe.description} />
 
-        {/* Ingredients */}
-        <RecipeUnorderedList
-          items={recipe.ingredients.map(
-            ({ name, quantity }) => `${quantity} g, ${name}`,
-          )}
-        />
+      {/* Ingredients */}
+      <RecipeUnorderedList
+        items={recipe.ingredients.map(
+          ({ name, quantity }) => `${quantity} g, ${name}`,
+        )}
+      />
 
-        {/* Instructions */}
-        <RecipeOrderedList
-          items={recipe.instructions
-            .split('.')
-            .map((s) => s.trim())
-            .filter((s) => s !== '')}
-        />
-      </section>
-    </>
+      {/* Instructions */}
+      <RecipeOrderedList
+        items={recipe.instructions
+          .split('.')
+          .map((s) => s.trim())
+          .filter((s) => s !== '')}
+      />
+    </section>
   );
 }
