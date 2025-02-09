@@ -1,12 +1,9 @@
-/* !!! need to get these to stack into a list when screen size is minimized */
 .recipes {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 2rem;
   justify-content: center;
-
-  /* !!! for some reason theres a surprise left padding of 40 on this element */
   padding-left: 0;
   padding-right: 0;
 }
