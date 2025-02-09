@@ -1,6 +1,7 @@
 import { Route, Router, Switch } from 'wouter';
 import Landing from './pages/Landing';
 import RecipeDetails from './pages/RecipeDetails';
+import About from './pages/About';
 
 /*
     !!!
@@ -15,6 +16,7 @@ export function Routes() {
       <Switch>
         <Route path="/" component={Landing} />
         <Route path="/recipes/:id" component={RecipeDetails} />
+        <Route path="/about" component={About} />
         <Route>
           <Custom404 />
         </Route>

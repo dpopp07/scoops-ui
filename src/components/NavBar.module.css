@@ -1,0 +1,11 @@
+.nav {
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  font-weight: bold;
+  border-bottom: solid 0.01rem rgba(255, 255, 255, 0.5);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}

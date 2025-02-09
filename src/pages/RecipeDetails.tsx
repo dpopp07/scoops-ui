@@ -1,18 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'wouter';
 
+import classes from './RecipeDetails.module.css';
+
 import BackButton from '../components/BackButton';
 import MainHeader from '../components/MainHeader';
 import RecipeOrderedList from '../components/RecipeOrderedList';
 import RecipeSummary from '../components/RecipeSummary';
 import RecipeUnorderedList from '../components/RecipeUnorderedList';
-
-/*!!!
- *
- * see if i can give this whole section an extra left margin or padding
- * instead of adding it in a bunch of individual elements
- *
- * */
 
 interface RecipeIngredient {
   name: string;
@@ -63,25 +58,27 @@ export default function RecipeDetails() {
   return (
     <>
       <MainHeader />
-      <BackButton />
+      <section className={classes.recipeDetails}>
+        <BackButton />
 
-      {/* Summary */}
-      <RecipeSummary name={recipe.name} description={recipe.description} />
+        {/* Summary */}
+        <RecipeSummary name={recipe.name} description={recipe.description} />
 
-      {/* Ingredients */}
-      <RecipeUnorderedList
-        items={recipe.ingredients.map(
-          ({ name, quantity }) => `${quantity} g, ${name}`,
-        )}
-      />
+        {/* Ingredients */}
+        <RecipeUnorderedList
+          items={recipe.ingredients.map(
+            ({ name, quantity }) => `${quantity} g, ${name}`,
+          )}
+        />
 
-      {/* Instructions */}
-      <RecipeOrderedList
-        items={recipe.instructions
-          .split('.')
-          .map((s) => s.trim())
-          .filter((s) => s !== '')}
-      />
+        {/* Instructions */}
+        <RecipeOrderedList
+          items={recipe.instructions
+            .split('.')
+            .map((s) => s.trim())
+            .filter((s) => s !== '')}
+        />
+      </section>
     </>
   );
 }
