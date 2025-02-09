@@ -11,8 +11,8 @@
 }
 
 .logo {
-  /* !!! cant figure out how to center this with title, oh well */
   margin-left: 2rem;
+  padding-bottom: 0.75rem;
 }
 
 .subtitle {
