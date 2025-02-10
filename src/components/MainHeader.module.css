@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   border-bottom: 2px solid white;
   text-align: center;
@@ -18,4 +19,11 @@
 .subtitle {
   margin-left: auto;
   margin-bottom: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 750px) {
+  .subtitle {
+    margin-left: 0;
+  }
 }
