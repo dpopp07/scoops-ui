@@ -1,0 +1,30 @@
+.errorPage {
+  text-align: center;
+}
+
+pre {
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.button {
+  background-color: #476c9b;
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+  border: solid 1px;
+  padding: 0.7rem;
+  margin: 1rem;
+  border-radius: 7px;
+}
+
+.button:hover {
+  background-color: #468c98;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+a:hover {
+  color: #add9f4;
+}

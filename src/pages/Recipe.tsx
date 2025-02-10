@@ -1,11 +1,11 @@
-import MainHeader from '../components/MainHeader';
+import { ErrorBoundary } from 'react-error-boundary';
 import RecipeDetails from '../components/RecipeDetails';
+import ErrorFallback from '../components/ErrorFallback';
 
 export default function Recipe() {
   return (
-    <>
-      <MainHeader />
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
       <RecipeDetails />
-    </>
+    </ErrorBoundary>
   );
 }

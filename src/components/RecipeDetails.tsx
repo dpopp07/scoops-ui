@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'wouter';
+import { useErrorBoundary } from 'react-error-boundary';
 
 import classes from './RecipeDetails.module.css';
 
@@ -23,6 +24,7 @@ interface Recipe {
 
 export default function RecipeDetails() {
   const { id } = useParams();
+  const { showBoundary } = useErrorBoundary();
 
   const [recipe, setRecipe] = useState({} as Recipe);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,17 +36,21 @@ export default function RecipeDetails() {
           `http://localhost:3000/api/v0/recipes/${id}`,
         );
         const result = await response.json();
+        if (!response.ok) {
+          throw new Error(
+            result.message || `Could not fetch recipe with ID ${id}`,
+          );
+        }
+
         setRecipe(result);
         setIsLoading(false);
-        // TODO: 400 errors are not yet handled.
       } catch (error) {
-        // TODO: If an error is caught here, the page will be "loading" forever.
-        console.log('Error fetching recipes: ', error);
+        showBoundary(error);
       }
     };
 
     getRecipe();
-  }, [id]);
+  }, [id, showBoundary]);
 
   if (isLoading) {
     return <Loader />;

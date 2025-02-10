@@ -1,11 +1,11 @@
-import MainHeader from '../components/MainHeader';
+import { ErrorBoundary } from 'react-error-boundary';
 import RecipeGrid from '../components/RecipeGrid';
+import ErrorFallback from '../components/ErrorFallback';
 
 export default function Landing() {
   return (
-    <>
-      <MainHeader />
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
       <RecipeGrid />
-    </>
+    </ErrorBoundary>
   );
 }

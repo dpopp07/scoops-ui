@@ -1,10 +1,8 @@
-import MainHeader from '../components/MainHeader';
 import classes from './About.module.css';
 
 export default function About() {
   return (
     <>
-      <MainHeader />
       <h3>About Scoops</h3>
       <p className={classes.text}>
         This is a website for sharing ice cream recipes. <br />
