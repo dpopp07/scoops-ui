@@ -5,6 +5,10 @@
   padding: 1rem;
   margin: 1rem 0;
   color: rgba(255, 255, 255, 0.87);
+
+  /* Prevent stretching when there are few. */
+  /*!!! might also need a max height*/
+  max-width: 350px;
 }
 
 .title {

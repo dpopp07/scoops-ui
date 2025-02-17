@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'wouter';
 import { useErrorBoundary } from 'react-error-boundary';
+import { useParams } from 'wouter';
 
 import classes from './RecipeDetails.module.css';
 
 import BackButton from './BackButton';
+import Loader from './Loader';
 import RecipeOrderedList from './RecipeOrderedList';
 import RecipeSummary from './RecipeSummary';
 import RecipeUnorderedList from './RecipeUnorderedList';
-import Loader from './Loader';
 
 interface RecipeIngredient {
   name: string;
@@ -17,8 +17,9 @@ interface RecipeIngredient {
 
 interface Recipe {
   name: string;
+  subtitle: string;
   description: string;
-  instructions: string; // TODO: eventually, a list
+  instructions: string[];
   ingredients: RecipeIngredient[];
 }
 
@@ -61,7 +62,11 @@ export default function RecipeDetails() {
       <BackButton />
 
       {/* Summary */}
-      <RecipeSummary name={recipe.name} description={recipe.description} />
+      <RecipeSummary
+        name={recipe.name}
+        description={recipe.description}
+        subtitle={recipe.subtitle}
+      />
 
       {/* Ingredients */}
       <RecipeUnorderedList
@@ -71,12 +76,7 @@ export default function RecipeDetails() {
       />
 
       {/* Instructions */}
-      <RecipeOrderedList
-        items={recipe.instructions
-          .split('.')
-          .map((s) => s.trim())
-          .filter((s) => s !== '')}
-      />
+      <RecipeOrderedList items={recipe.instructions} />
     </section>
   );
 }
