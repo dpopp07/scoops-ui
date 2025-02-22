@@ -1,0 +1,9 @@
+.hasPrep {
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 4px;
+  text-decoration: underline;
+}
+
+.hasPrep:hover {
+  color: #add9f4;
+}

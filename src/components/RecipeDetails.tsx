@@ -41,7 +41,7 @@ interface RecipeIngredient {
   category: IngredientCategory;
 }
 
-export interface Analysis {
+interface Analysis {
   totalFat: number;
   milkFat: number;
   totalSolids: number;

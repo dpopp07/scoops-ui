@@ -1,3 +1,4 @@
+import RecipeIngredient from './RecipeIngredient';
 import classes from './RecipeIngredientSection.module.css';
 import RecipeUnorderedList from './RecipeUnorderedList';
 
@@ -33,12 +34,9 @@ export default function RecipeIngredientSection({
     <section>
       <h6 className={classes.categoryTitle}>{category}</h6>
       <RecipeUnorderedList
-        items={ingredients.map(
-          ({ name, quantity, unit }) =>
-            // TODO: smarter logic to determine spacing, don't
-            // want it in the case of percentages, etc.
-            `${quantity}${unit ? ` ${unit}` : ''}, ${name}`,
-        )}
+        items={ingredients.map((i) => (
+          <RecipeIngredient ingredient={i} />
+        ))}
       />
     </section>
   );

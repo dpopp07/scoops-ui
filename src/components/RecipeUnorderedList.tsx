@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 interface Props {
-  items: string[];
+  items: ReactNode[];
 }
 
 export default function RecipeUnorderedList({ items }: Props) {
