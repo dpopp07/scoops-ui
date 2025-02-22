@@ -147,7 +147,7 @@ function formatAnalysis(analysis: Analysis): string[] {
   return [
     `Total Mass: ${totalMass} g`,
     `POD: ${round(analysis.pod)}`,
-    `PAC: ${round(analysis.pod)}`,
+    `PAC: ${round(analysis.pac)}`,
     `Milk Fat: ${getPercentage(analysis.milkFat, totalMass)}`,
     `Total Fat: ${getPercentage(analysis.totalFat, totalMass)}`,
     `Milk Solids Nonfat: ${getPercentage(analysis.milkSolidsNonfat, totalMass)}`,
