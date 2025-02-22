@@ -5,6 +5,7 @@ export default function ErrorFallback({ error }: { error: Error }) {
   const { resetBoundary } = useErrorBoundary();
 
   /*
+    TODO:
     - style the button - make it blend in and maybe make the border thin or opaque or something
     - maybe block it so it can be stacked on "open an issue"
 

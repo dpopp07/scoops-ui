@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  /* need to figure out better values for these */
+  /* TODO: need to figure out better values for these */
   margin-left: 10%;
   margin-right: 10%;
 }
