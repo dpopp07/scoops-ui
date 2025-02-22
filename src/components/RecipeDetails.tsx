@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useParams } from 'wouter';
 
@@ -6,13 +6,39 @@ import classes from './RecipeDetails.module.css';
 
 import BackButton from './BackButton';
 import Loader from './Loader';
+import RecipeIngredientSection from './RecipeIngredientSection';
 import RecipeOrderedList from './RecipeOrderedList';
+import RecipeSection from './RecipeSection';
 import RecipeSummary from './RecipeSummary';
 import RecipeUnorderedList from './RecipeUnorderedList';
+
+enum IngredientCategory {
+  Solids = 'solids',
+  Dairy = 'dairy',
+  Other = 'other',
+  Steeping = 'steeping',
+  Finishing = 'finishing',
+  Churning = 'churning',
+  Drawing = 'drawing',
+}
+
+interface IngredientPrep {
+  description: string;
+  ingredients: {
+    // TODO: Make this an interface
+    name: string;
+    quantity: number;
+    unit?: string;
+  }[];
+  instructions: string[];
+}
 
 interface RecipeIngredient {
   name: string;
   quantity: number;
+  unit?: string;
+  preparation?: IngredientPrep;
+  category: IngredientCategory;
 }
 
 export interface Analysis {
@@ -84,21 +110,35 @@ export default function RecipeDetails() {
       />
 
       {/* Ingredients */}
-      <RecipeUnorderedList
-        name="Ingredients"
-        items={recipe.ingredients.map(
-          ({ name, quantity }) => `${quantity} g, ${name}`,
-        )}
-      />
+      <RecipeSection name="Ingredients">
+        {Object.values(IngredientCategory).reduce((elems, category) => {
+          // Don't include any sections for categories that
+          // don't have any associated ingredients.
+          if (!recipe.ingredients.some((i) => i.category === category)) {
+            return elems;
+          }
+
+          return [
+            ...elems,
+            <RecipeIngredientSection
+              category={capitalize(category)}
+              ingredients={recipe.ingredients.filter(
+                (i) => i.category === category,
+              )}
+            />,
+          ];
+        }, [] as ReactNode[])}
+      </RecipeSection>
 
       {/* Instructions */}
-      <RecipeOrderedList items={recipe.instructions} />
+      <RecipeSection name="Instructions">
+        <RecipeOrderedList items={recipe.instructions} />
+      </RecipeSection>
 
       {/* Analysis */}
-      <RecipeUnorderedList
-        name="Analysis"
-        items={formatAnalysis(recipe.analysis)}
-      />
+      <RecipeSection name="Analysis">
+        <RecipeUnorderedList items={formatAnalysis(recipe.analysis)} />
+      </RecipeSection>
     </section>
   );
 }
@@ -131,4 +171,8 @@ function getPrecisePercentage(value: number, total: number): string {
 
 function round(value: number): string {
   return value.toFixed(0);
+}
+
+function capitalize(val: string): string {
+  return val.charAt(0).toUpperCase() + val.slice(1);
 }
