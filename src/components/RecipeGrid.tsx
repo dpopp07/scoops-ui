@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 
-import RecipeTile from './RecipeTile';
-import classes from './RecipeGrid.module.css';
 import Loader from './Loader';
+import classes from './RecipeGrid.module.css';
+import RecipeTile from './RecipeTile';
 
 export default function RecipeGrid() {
   const { showBoundary } = useErrorBoundary();
@@ -36,8 +36,8 @@ export default function RecipeGrid() {
 
   return (
     <ul className={classes.recipes}>
-      {recipes.map(({ id, name }) => (
-        <RecipeTile name={name} key={id} id={id} />
+      {recipes.map(({ id, name, nameKey }) => (
+        <RecipeTile name={name} key={id} id={id} nameKey={nameKey} />
       ))}
     </ul>
   );

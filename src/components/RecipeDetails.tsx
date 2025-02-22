@@ -65,7 +65,7 @@ interface Recipe {
 }
 
 export default function RecipeDetails() {
-  const { id } = useParams();
+  const { name } = useParams();
   const { showBoundary } = useErrorBoundary();
 
   const [recipe, setRecipe] = useState({} as Recipe);
@@ -75,13 +75,11 @@ export default function RecipeDetails() {
     const getRecipe = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v0/recipes/${id}`,
+          `http://localhost:3000/api/v0/recipes/${name}`,
         );
         const result = await response.json();
         if (!response.ok) {
-          throw new Error(
-            result.message || `Could not fetch recipe with ID ${id}`,
-          );
+          throw new Error(result.message || `Could not fetch recipe '${name}'`);
         }
 
         setRecipe(result);
@@ -92,7 +90,7 @@ export default function RecipeDetails() {
     };
 
     getRecipe();
-  }, [id, showBoundary]);
+  }, [name, showBoundary]);
 
   if (isLoading) {
     return <Loader />;
