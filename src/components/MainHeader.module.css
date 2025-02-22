@@ -5,10 +5,16 @@
   border-bottom: 2px solid white;
   text-align: center;
   padding-bottom: 1rem;
+  margin-top: 2.5rem;
 }
 
 .title {
   margin-bottom: 0;
+  margin-top: 0;
+}
+
+.titleLink {
+  text-decoration: none;
 }
 
 .logo {
