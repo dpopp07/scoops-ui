@@ -1,4 +1,12 @@
-.recipe {
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.tile {
+  /* This is a link element - remove the default underline. */
+  text-decoration: none;
+
   border: solid 0.15rem;
   border-radius: 1rem;
   text-align: center;
@@ -7,19 +15,9 @@
   color: rgba(255, 255, 255, 0.87);
 
   /* Prevent stretching when there are few. */
-  /*!!! might also need a max height*/
   max-width: 350px;
 }
 
-.title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.tileLink {
-  text-decoration: none;
-}
-
-.recipe:hover {
+.tile:hover {
   background-color: #468c98;
 }

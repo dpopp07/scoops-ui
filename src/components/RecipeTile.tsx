@@ -8,8 +8,8 @@ interface Props {
 
 export default function RecipeTile({ id, name }: Props) {
   return (
-    <Link to={`/recipes/${id}`} className={classes.tileLink}>
-      <li className={classes.recipe}>
+    <Link to={`/recipes/${id}`} className={classes.tile}>
+      <li>
         <p className={classes.title}> {name} </p>
       </li>
     </Link>

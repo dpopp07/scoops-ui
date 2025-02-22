@@ -3,12 +3,13 @@ import classes from './RecipeSection.module.css';
 
 interface Props {
   items: string[];
+  name: string;
 }
 
-export default function RecipeUnorderedList({ items }: Props) {
+export default function RecipeUnorderedList({ items, name }: Props) {
   return (
     <RecipeSection>
-      <h3 className={classes.sectionTitle}>Ingredients</h3>
+      <h3 className={classes.sectionTitle}>{name}</h3>
       <ul>
         {items.map((item, i) => (
           <li key={i}>{item}</li>

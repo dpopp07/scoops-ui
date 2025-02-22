@@ -15,12 +15,27 @@ interface RecipeIngredient {
   quantity: number;
 }
 
+export interface Analysis {
+  totalFat: number;
+  milkFat: number;
+  totalSolids: number;
+  totalSolidsNonfat: number;
+  milkSolidsNonfat: number;
+  water: number;
+  sugars: number;
+  totalMass: number;
+  pod: number;
+  pac: number;
+  stabilizers: number;
+}
+
 interface Recipe {
   name: string;
   subtitle: string;
   description: string;
   instructions: string[];
   ingredients: RecipeIngredient[];
+  analysis: Analysis;
 }
 
 export default function RecipeDetails() {
@@ -70,6 +85,7 @@ export default function RecipeDetails() {
 
       {/* Ingredients */}
       <RecipeUnorderedList
+        name="Ingredients"
         items={recipe.ingredients.map(
           ({ name, quantity }) => `${quantity} g, ${name}`,
         )}
@@ -77,6 +93,42 @@ export default function RecipeDetails() {
 
       {/* Instructions */}
       <RecipeOrderedList items={recipe.instructions} />
+
+      {/* Analysis */}
+      <RecipeUnorderedList
+        name="Analysis"
+        items={formatAnalysis(recipe.analysis)}
+      />
     </section>
   );
+}
+
+function formatAnalysis(analysis: Analysis): string[] {
+  const { totalMass } = analysis;
+
+  return [
+    `Total Mass: ${totalMass} g`,
+    `POD: ${round(analysis.pod)}`,
+    `PAC: ${round(analysis.pod)}`,
+    `Milk Fat: ${getPercentage(analysis.milkFat, totalMass)}`,
+    `Total Fat: ${getPercentage(analysis.totalFat, totalMass)}`,
+    `Milk Solids Nonfat: ${getPercentage(analysis.milkSolidsNonfat, totalMass)}`,
+    `Total Solids Nonfat: ${getPercentage(analysis.totalSolidsNonfat, totalMass)}`,
+    `Sugars: ${getPercentage(analysis.sugars, totalMass)}`,
+    `Stabilizers: ${getPrecisePercentage(analysis.stabilizers, totalMass)}`,
+    `Total Solids: ${getPercentage(analysis.totalSolids, totalMass)}`,
+    `Water: ${getPercentage(analysis.water, totalMass)}`,
+  ];
+}
+
+function getPercentage(value: number, total: number): string {
+  return `${round((value / total) * 100)}%`;
+}
+
+function getPrecisePercentage(value: number, total: number): string {
+  return `${((value / total) * 100).toFixed(2)}%`;
+}
+
+function round(value: number): string {
+  return value.toFixed(0);
 }

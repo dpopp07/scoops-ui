@@ -5,5 +5,5 @@
   justify-content: center;
   padding-left: 0;
   padding-right: 0;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
 }
