@@ -8,6 +8,16 @@
   z-index: 1;
 }
 
+.close {
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.close:hover {
+  background-color: rgba(152, 68, 71, 0.8);
+  cursor: pointer;
+}
+
 .modal {
   border: 1px solid;
   border-color: rgba(255, 255, 255, 0.87);
