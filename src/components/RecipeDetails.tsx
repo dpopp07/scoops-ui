@@ -4,6 +4,7 @@ import { useParams } from 'wouter';
 
 import classes from './RecipeDetails.module.css';
 
+import { Analysis, IngredientCategory, Recipe } from '../utils';
 import BackButton from './BackButton';
 import Loader from './Loader';
 import RecipeIngredientSection from './RecipeIngredientSection';
@@ -11,58 +12,6 @@ import RecipeOrderedList from './RecipeOrderedList';
 import RecipeSection from './RecipeSection';
 import RecipeSummary from './RecipeSummary';
 import RecipeUnorderedList from './RecipeUnorderedList';
-
-enum IngredientCategory {
-  Solids = 'solids',
-  Dairy = 'dairy',
-  Other = 'other',
-  Steeping = 'steeping',
-  Finishing = 'finishing',
-  Churning = 'churning',
-  Drawing = 'drawing',
-}
-
-interface IngredientPrep {
-  description: string;
-  ingredients: {
-    // TODO: Make this an interface
-    name: string;
-    quantity: number;
-    unit?: string;
-  }[];
-  instructions: string[];
-}
-
-interface RecipeIngredient {
-  name: string;
-  quantity: number;
-  unit?: string;
-  preparation?: IngredientPrep;
-  category: IngredientCategory;
-}
-
-interface Analysis {
-  totalFat: number;
-  milkFat: number;
-  totalSolids: number;
-  totalSolidsNonfat: number;
-  milkSolidsNonfat: number;
-  water: number;
-  sugars: number;
-  totalMass: number;
-  pod: number;
-  pac: number;
-  stabilizers: number;
-}
-
-interface Recipe {
-  name: string;
-  subtitle: string;
-  description: string;
-  instructions: string[];
-  ingredients: RecipeIngredient[];
-  analysis: Analysis;
-}
 
 export default function RecipeDetails() {
   const { name } = useParams();

@@ -1,24 +1,13 @@
-import { formatUnit } from '../utils';
+import { formatUnit, Preparation } from '../utils';
 import classes from './IngredientPreparation.module.css';
 import RecipeOrderedList from './RecipeOrderedList';
 import RecipeSection from './RecipeSection';
 import RecipeSummary from './RecipeSummary';
 import RecipeUnorderedList from './RecipeUnorderedList';
 
-interface IngredientPrep {
-  description: string;
-  ingredients: {
-    // TODO: Make this an interface
-    name: string;
-    quantity: number;
-    unit?: string;
-  }[];
-  instructions: string[];
-}
-
 interface Props {
   name: string;
-  prep: IngredientPrep;
+  prep: Preparation;
 }
 
 export default function IngredientPreparation({ name, prep }: Props) {

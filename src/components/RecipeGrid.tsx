@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 
+import { Named } from '../utils';
 import Loader from './Loader';
 import classes from './RecipeGrid.module.css';
 import RecipeTile from './RecipeTile';
-
-interface Named {
-  name: string;
-}
 
 export default function RecipeGrid() {
   const { showBoundary } = useErrorBoundary();
