@@ -119,6 +119,7 @@ export default function RecipeDetails() {
           return [
             ...elems,
             <RecipeIngredientSection
+              key={category}
               category={capitalize(category)}
               ingredients={recipe.ingredients.filter(
                 (i) => i.category === category,
