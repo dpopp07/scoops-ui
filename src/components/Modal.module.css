@@ -15,8 +15,25 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   z-index: 1;
-  width: 65%;
+  width: 50%;
   top: 50rem;
   color: rgba(255, 255, 255, 0.87);
   background-color: #468c98;
+}
+
+.modal h2 {
+  font-size: 1.953rem;
+  margin-bottom: 1.9rem;
+}
+
+.modal h3 {
+  font-size: 1.563rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal li,
+.modal p {
+  font-size: 1.1rem;
+  width: 100%;
 }

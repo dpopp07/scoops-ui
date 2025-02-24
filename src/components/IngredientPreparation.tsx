@@ -27,7 +27,7 @@ export default function IngredientPreparation({ name, prep }: Props) {
   return (
     <section className={classes.ingredientPrep}>
       {/* Summary */}
-      <RecipeSummary name={name} description={description} subtitle={''} />
+      <RecipeSummary name={name} description={description} />
 
       {/* Ingredients */}
       <RecipeSection name="Ingredients">
