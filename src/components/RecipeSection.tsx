@@ -9,7 +9,7 @@ interface Props {
 export default function RecipeSection({ children, name }: Props) {
   return (
     <section className={classes.recipeSection}>
-      <h3 className={classes.sectionTitle}>{name}</h3>
+      <h3>{name}</h3>
       {children}
     </section>
   );
