@@ -42,6 +42,10 @@
   margin-bottom: 1rem;
 }
 
+.modal ol {
+  width: 90%;
+}
+
 .modal li,
 .modal p {
   font-size: 1.1rem;

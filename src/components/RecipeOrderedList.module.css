@@ -1,3 +1,7 @@
 .item + .item {
   margin-top: 1rem;
 }
+
+.list {
+  width: 85%;
+}

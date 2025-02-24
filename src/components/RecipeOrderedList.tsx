@@ -6,7 +6,7 @@ interface Props {
 
 export default function RecipeOrderedList({ items }: Props) {
   return (
-    <ol>
+    <ol className={classes.list}>
       {items.map((item, i) => (
         <li className={classes.item} key={i}>
           {item}
