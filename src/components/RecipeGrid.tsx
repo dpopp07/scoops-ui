@@ -5,6 +5,10 @@ import Loader from './Loader';
 import classes from './RecipeGrid.module.css';
 import RecipeTile from './RecipeTile';
 
+interface Named {
+  name: string;
+}
+
 export default function RecipeGrid() {
   const { showBoundary } = useErrorBoundary();
 
@@ -19,6 +23,9 @@ export default function RecipeGrid() {
         if (!response.ok) {
           throw new Error(result.message || 'Could not fetch recipes');
         }
+
+        // For now, sort recipes in alphabetical order.
+        result.recipes.sort((a: Named, b: Named) => (a.name < b.name ? -1 : 1));
 
         setRecipes(result.recipes);
         setIsLoading(false);
@@ -37,7 +44,7 @@ export default function RecipeGrid() {
   return (
     <ul className={classes.recipes}>
       {recipes.map(({ id, name, nameKey }) => (
-        <RecipeTile name={name} key={id} id={id} nameKey={nameKey} />
+        <RecipeTile name={name} key={id} nameKey={nameKey} />
       ))}
     </ul>
   );
