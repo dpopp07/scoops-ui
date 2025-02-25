@@ -3,12 +3,12 @@ import classes from './RecipeTile.module.css';
 
 interface Props {
   name: string;
-  nameKey: string;
+  canonicalName: string;
 }
 
-export default function RecipeTile({ name, nameKey }: Props) {
+export default function RecipeTile({ name, canonicalName }: Props) {
   return (
-    <Link to={`/recipes/${nameKey}`} className={classes.tile}>
+    <Link to={`/recipes/${canonicalName}`} className={classes.tile}>
       <li>
         <p className={classes.title}> {name} </p>
       </li>

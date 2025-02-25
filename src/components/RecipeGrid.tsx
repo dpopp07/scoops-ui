@@ -40,8 +40,8 @@ export default function RecipeGrid() {
 
   return (
     <ul className={classes.recipes}>
-      {recipes.map(({ id, name, nameKey }) => (
-        <RecipeTile name={name} key={id} nameKey={nameKey} />
+      {recipes.map(({ id, name, canonicalName }) => (
+        <RecipeTile name={name} key={id} canonicalName={canonicalName} />
       ))}
     </ul>
   );
