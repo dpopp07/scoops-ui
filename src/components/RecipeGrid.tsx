@@ -15,7 +15,14 @@ export default function RecipeGrid() {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/v0/recipes/');
+        const headers = new Headers();
+        headers.append(
+          'Authorization',
+          `Bearer ${import.meta.env.VITE_API_KEY}`,
+        );
+        const response = await fetch('http://localhost:3000/api/v0/recipes/', {
+          headers,
+        });
         const result = await response.json();
         if (!response.ok) {
           throw new Error(result.message || 'Could not fetch recipes');

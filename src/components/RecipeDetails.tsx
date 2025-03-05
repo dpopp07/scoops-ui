@@ -23,8 +23,14 @@ export default function RecipeDetails() {
   useEffect(() => {
     const getRecipe = async () => {
       try {
+        const headers = new Headers();
+        headers.append(
+          'Authorization',
+          `Bearer ${import.meta.env.VITE_API_KEY}`,
+        );
         const response = await fetch(
           `http://localhost:3000/api/v0/recipes/${name}`,
+          { headers },
         );
         const result = await response.json();
         if (!response.ok) {
