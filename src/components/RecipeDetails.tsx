@@ -29,7 +29,7 @@ export default function RecipeDetails() {
           `Bearer ${import.meta.env.VITE_API_KEY}`,
         );
         const response = await fetch(
-          `http://localhost:3000/api/v0/recipes/${name}`,
+          `${import.meta.env.VITE_API_URL}/api/v0/recipes/${name}`,
           { headers },
         );
         const result = await response.json();

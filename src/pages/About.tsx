@@ -5,36 +5,11 @@ export default function About() {
     <>
       <h3>About Scoops</h3>
       <p className={classes.text}>
-        This is a website for sharing ice cream recipes. <br />
-        <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-        congue dui id ullamcorper iaculis. Duis vulputate volutpat convallis.
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Cras congue dui id ullamcorper iaculis. Duis vulputate volutpat
-        convallis. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Cras congue dui id ullamcorper iaculis. Duis vulputate
-        volutpat convallis. Orci varius natoque penatibus et magnis dis
-        parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Cras congue dui id ullamcorper iaculis.
-        Duis vulputate volutpat convallis. Orci varius natoque penatibus et
-        magnis dis parturient montes, nascetur ridiculus mus.
+        A place to share ice cream recipes I've developed alongside the data
+        that drives them.
       </p>
       <h3 id="about-analysis">What is analysis?</h3>
-      <p className={classes.text}>
-        Coming soon... <br />
-        <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue dui
-        id ullamcorper iaculis. Duis vulputate volutpat convallis. Orci varius
-        natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-        mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-        congue dui id ullamcorper iaculis. Duis vulputate volutpat convallis.
-        Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Cras congue dui id ullamcorper iaculis. Duis vulputate volutpat
-        convallis. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      </p>
+      <p className={classes.text}>Coming soon...</p>
     </>
   );
 }
