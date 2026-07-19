@@ -1,55 +1,34 @@
-import { ReactNode, useEffect, useState } from 'react';
-import { useErrorBoundary } from 'react-error-boundary';
+import { recipes, ingredients } from '../data.js';
+
+import { ReactNode } from 'react';
 import { useParams } from 'wouter';
 
 import classes from './RecipeDetails.module.css';
 
-import { Analysis, IngredientCategory, Recipe } from '../utils';
+import { Analysis, IngredientCategory } from '../utils';
 import BackButton from './BackButton';
-import Loader from './Loader';
 import RecipeIngredientSection from './RecipeIngredientSection';
 import RecipeOrderedList from './RecipeOrderedList';
 import RecipeSection from './RecipeSection';
 import RecipeSummary from './RecipeSummary';
 import RecipeUnorderedList from './RecipeUnorderedList';
 
+const ingredientByName = Object.fromEntries(
+  Object.values(ingredients).map((i) => [i.name, i]),
+);
+
 export default function RecipeDetails() {
   const { name } = useParams();
-  const { showBoundary } = useErrorBoundary();
+  const baseRecipe = recipes[name];
 
-  const [recipe, setRecipe] = useState({} as Recipe);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const getRecipe = async () => {
-      try {
-        const headers = new Headers();
-        headers.append(
-          'Authorization',
-          `Bearer ${import.meta.env.VITE_API_KEY}`,
-        );
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/v0/recipes/${name}`,
-          { headers },
-        );
-        const result = await response.json();
-        if (!response.ok) {
-          throw new Error(result.message || `Could not fetch recipe '${name}'`);
-        }
-
-        setRecipe(result);
-        setIsLoading(false);
-      } catch (error) {
-        showBoundary(error);
-      }
-    };
-
-    getRecipe();
-  }, [name, showBoundary]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
+  const recipe = {
+    ...baseRecipe,
+    ingredients: baseRecipe.ingredients.map((ingredient) => ({
+      ...ingredient,
+      category: ingredientByName[ingredient.name]?.category,
+      preparation: ingredientByName[ingredient.name]?.preparation,
+    })),
+  };
 
   return (
     <section className={classes.recipeDetails}>
@@ -90,9 +69,10 @@ export default function RecipeDetails() {
       </RecipeSection>
 
       {/* Analysis */}
-      <RecipeSection name="Analysis">
+      {/* TODO: compute analysis from ingredient data */}
+      {/*<RecipeSection name="Analysis">
         <RecipeUnorderedList items={formatAnalysis(recipe.analysis)} />
-      </RecipeSection>
+      </RecipeSection>*/}
     </section>
   );
 }
