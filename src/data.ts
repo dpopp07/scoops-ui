@@ -1,4 +1,29 @@
-export const recipes = {
+import {
+  IngredientCategory,
+  IngredientData,
+  Preparation,
+  RecipeIngredientSummary,
+} from './utils';
+
+interface RecipeData {
+  name: string;
+  subtitle: string;
+  description: string;
+  estimatedMass: number;
+  base: string;
+  instructions: string[];
+  ingredients: RecipeIngredientSummary[];
+}
+
+interface Ingredient {
+  name: string;
+  description: string;
+  data?: IngredientData;
+  category: IngredientCategory;
+  preparation?: Preparation;
+}
+
+export const recipes: Record<string, RecipeData> = {
   vanilla: {
     name: 'Vanilla',
     subtitle: 'Simple and elegant',
@@ -736,7 +761,7 @@ export const recipes = {
   },
 };
 
-export const ingredients = {
+export const ingredients: Record<string, Ingredient> = {
   milk: {
     name: 'Whole Milk',
     description:
@@ -748,7 +773,7 @@ export const ingredients = {
       milkSolidsNonfat: 0.088,
       water: 0.873,
     },
-    category: 'dairy',
+    category: 'dairy' as IngredientCategory,
   },
   cream: {
     name: 'Heavy Cream',
@@ -761,7 +786,7 @@ export const ingredients = {
       milkSolidsNonfat: 0.056,
       water: 0.58,
     },
-    category: 'dairy',
+    category: 'dairy' as IngredientCategory,
   },
   sugar: {
     name: 'Sugar',
@@ -772,7 +797,7 @@ export const ingredients = {
       pod: 1,
       sugars: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   dextrose: {
     name: 'Dextrose',
@@ -783,7 +808,7 @@ export const ingredients = {
       pod: 0.75,
       sugars: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   milkPowder: {
     name: 'Milk Powder',
@@ -794,7 +819,7 @@ export const ingredients = {
       pac: 0.5,
       milkSolidsNonfat: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   eggYolks: {
     name: 'Egg Yolks',
@@ -805,7 +830,7 @@ export const ingredients = {
       otherSolidsNonfat: 0.27,
       water: 0.5,
     },
-    category: 'other',
+    category: 'other' as IngredientCategory,
   },
   stabilizerBlend: {
     name: 'Stabilizer Blend',
@@ -839,7 +864,7 @@ export const ingredients = {
       description:
         'My go-to stabilizer blend, taken from the UnderBelly blog. Makes enough for ~10 batches of ice cream. Can likely be replaced by most commercial stabilizer blends.',
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   salt: {
     name: 'Salt',
@@ -848,7 +873,7 @@ export const ingredients = {
     data: {
       otherSolidsNonfat: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   vanillaExtract: {
     name: 'Vanilla Extract',
@@ -857,7 +882,7 @@ export const ingredients = {
     data: {
       water: 0.526,
     },
-    category: 'finishing',
+    category: 'finishing' as IngredientCategory,
   },
   cocoaPowder: {
     name: 'Cocoa Powder',
@@ -869,7 +894,7 @@ export const ingredients = {
       otherFat: 0.214,
       otherSolidsNonfat: 0.786,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   fructose: {
     name: 'Fructose',
@@ -880,7 +905,7 @@ export const ingredients = {
       pod: 1.7,
       sugars: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   toastedMilkPowder: {
     name: 'Toasted Milk Powder',
@@ -909,7 +934,7 @@ export const ingredients = {
       description:
         'Toasting milk solids is exactly what happens when you brown butter. This replicates those flavors, without the milkfat.',
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   brownSugar: {
     name: 'Brown Sugar',
@@ -920,7 +945,7 @@ export const ingredients = {
       pod: 1,
       sugars: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   candiedPecans: {
     name: 'Candied Pecans',
@@ -965,7 +990,7 @@ export const ingredients = {
       description:
         'Butter and pecans are a match made in heaven. Sugar and salt help the flavor to pop once frozen in ice cream. Toasting brings out the flavor of the nuts but be careful not to overcook them!',
     },
-    category: 'churning',
+    category: 'churning' as IngredientCategory,
   },
   crushedOreos: {
     name: "Crushed Oreo's",
@@ -987,7 +1012,7 @@ export const ingredients = {
       description:
         'I think ice cream is better with only the cookies, so I recommend removing the icing. That said, if you want it - keep it! Note that the amount is just an estimate - use as much as you need for your batch.',
     },
-    category: 'churning',
+    category: 'churning' as IngredientCategory,
   },
   peppermintExtract: {
     name: 'Peppermint Extract',
@@ -996,7 +1021,7 @@ export const ingredients = {
     data: {
       water: 0.526,
     },
-    category: 'finishing',
+    category: 'finishing' as IngredientCategory,
   },
   chocolateChips: {
     name: 'Chocolate Chips',
@@ -1028,7 +1053,7 @@ export const ingredients = {
       description:
         'Mixing chocolate with coconut oil prevents the chocolate from freezing too hard. Pouring the mixture in warm will result in the chips being broken up as they freeze. A cooler mixture will result in larger chips; hotter, smaller.',
     },
-    category: 'churning',
+    category: 'churning' as IngredientCategory,
   },
   pistachioInfusedMilk: {
     name: 'Pistachio Infused Milk',
@@ -1067,13 +1092,13 @@ export const ingredients = {
       description:
         "This is the best method I've found for flavoring an ice cream with pistachios without compromising on texture. Allocate the time needed for a good long steep and you'll be rewarded with a flavorful ice cream.",
     },
-    category: 'dairy',
+    category: 'dairy' as IngredientCategory,
   },
   pistachios: {
     name: 'Pistachios',
     description:
       'Pistachio nuts, salted or unsalted, toasted or not - your choice - for use as a mix-in.',
-    category: 'churning',
+    category: 'churning' as IngredientCategory,
   },
   instantCoffee: {
     name: 'Instant Coffee',
@@ -1083,7 +1108,7 @@ export const ingredients = {
       pac: 0.2,
       otherSolidsNonfat: 1,
     },
-    category: 'solids',
+    category: 'solids' as IngredientCategory,
   },
   peanutButter: {
     name: 'Peanut Butter',
@@ -1095,7 +1120,7 @@ export const ingredients = {
       otherFat: 0.53,
       otherSolidsNonfat: 0.47,
     },
-    category: 'other',
+    category: 'other' as IngredientCategory,
   },
   chocolateChipCookieDough: {
     name: 'Chocolate Chip Cookie Dough',
@@ -1172,12 +1197,12 @@ export const ingredients = {
       description:
         'This recipe is adapted from "Hello, My Name Is Ice Cream" by Dana Cree, with only a small tweak to make the chocolate chips softer when frozen.',
     },
-    category: 'drawing',
+    category: 'drawing' as IngredientCategory,
   },
   bananas: {
     name: 'Bananas',
     description:
       'A delicious, yellow, and slightly radioactive fruit. The ideal way to flavor ice cream with them is by steeping, not blending. They should be VERY ripe.',
-    category: 'steeping',
+    category: 'steeping' as IngredientCategory,
   },
 };

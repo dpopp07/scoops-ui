@@ -14,7 +14,7 @@ export interface Preparation {
   instructions: string[];
 }
 
-interface RecipeIngredientSummary extends Named {
+export interface RecipeIngredientSummary extends Named {
   quantity: number;
   unit?: string;
 }
@@ -47,4 +47,16 @@ export interface Recipe extends Preparation {
 
 export interface Named {
   name: string;
+}
+
+export interface IngredientData {
+  pod?: number;
+  pac?: number;
+  milkFat?: number;
+  otherFat?: number;
+  milkSolidsNonfat?: number;
+  otherSolidsNonfat?: number;
+  water?: number;
+  sugars?: number;
+  stabilizers?: number;
 }

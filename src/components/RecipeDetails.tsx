@@ -5,7 +5,7 @@ import { useParams } from 'wouter';
 
 import classes from './RecipeDetails.module.css';
 
-import { Analysis, IngredientCategory } from '../utils';
+import { analyze, Analysis, IngredientCategory } from '../utils';
 import BackButton from './BackButton';
 import RecipeIngredientSection from './RecipeIngredientSection';
 import RecipeOrderedList from './RecipeOrderedList';
@@ -17,9 +17,18 @@ const ingredientByName = Object.fromEntries(
   Object.values(ingredients).map((i) => [i.name, i]),
 );
 
+const analyzableIngredients = Object.fromEntries(
+  Object.values(ingredients).map(({ name, category, data }) => [
+    name,
+    { category, data },
+  ]),
+);
+
 export default function RecipeDetails() {
   const { name } = useParams();
-  const baseRecipe = recipes[name];
+  const baseRecipe = recipes[name as string];
+
+  const analysis = analyze(baseRecipe.ingredients, analyzableIngredients);
 
   const recipe = {
     ...baseRecipe,
@@ -28,6 +37,7 @@ export default function RecipeDetails() {
       category: ingredientByName[ingredient.name]?.category,
       preparation: ingredientByName[ingredient.name]?.preparation,
     })),
+    analysis,
   };
 
   return (
@@ -69,10 +79,9 @@ export default function RecipeDetails() {
       </RecipeSection>
 
       {/* Analysis */}
-      {/* TODO: compute analysis from ingredient data */}
-      {/*<RecipeSection name="Analysis">
+      <RecipeSection name="Analysis">
         <RecipeUnorderedList items={formatAnalysis(recipe.analysis)} />
-      </RecipeSection>*/}
+      </RecipeSection>
     </section>
   );
 }
