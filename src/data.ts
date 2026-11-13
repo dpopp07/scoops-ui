@@ -33,13 +33,13 @@ export const recipes: Record<string, RecipeData> = {
     base: 'Vanilla',
     instructions: [
       'Measure out and mix together all of the solids.',
-      'Add the dairy to a medium-sized, heavy-bottomed pot.',
+      'Add the vanilla paste and dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Continue cooking the dairy, whisking occasionally. Cook until the temperature reaches 165° F.',
       'Once the mixture is at temperature, pour through a fine mesh strainer into the bowl in the ice bath.',
-      'Whisk occasionally while the mixture cools. Once the temperature is below 80° F, add the finishing ingredients.',
+      'Whisk occasionally while the mixture cools to about 80° F.',
       'Cover the bowl or transfer the mixture to a container. Store in the fridge to age, at least 4 hours and up to overnight.',
       "Churn in an ice cream machine according to the manufacture's instructions, about 15-20 minutes.",
       'Draw ice cream from the machine and into a freezer-safe container. Store in the freezer.',
@@ -47,22 +47,22 @@ export const recipes: Record<string, RecipeData> = {
     ingredients: [
       {
         name: 'Whole Milk',
-        quantity: 470,
+        quantity: 475,
         unit: 'g',
       },
       {
         name: 'Heavy Cream',
-        quantity: 341,
+        quantity: 338,
         unit: 'g',
       },
       {
         name: 'Sugar',
-        quantity: 63,
+        quantity: 61,
         unit: 'g',
       },
       {
         name: 'Dextrose',
-        quantity: 57,
+        quantity: 58,
         unit: 'g',
       },
       {
@@ -81,8 +81,8 @@ export const recipes: Record<string, RecipeData> = {
         unit: 'g',
       },
       {
-        name: 'Vanilla Extract',
-        quantity: 6,
+        name: 'Vanilla Paste',
+        quantity: 5,
         unit: 'g',
       },
     ],
@@ -98,7 +98,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved. If not all the cocoa dissolves right away, that is okay. Keep going.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved. If not all the cocoa dissolves right away, that is okay. Keep going.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Continue cooking the dairy, whisking occasionally. Cook until the temperature reaches 165° F.',
       'Once the mixture is at temperature, pour through a fine mesh strainer into the bowl in the ice bath.',
@@ -171,7 +171,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved. If not all the toasted milk powder dissolves right away, that is okay. Keep going.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved. If not all the toasted milk powder dissolves right away, that is okay. Keep going.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Temper the egg yolks by whisking them in a bowl, then whisking in about a half cup of warm dairy a little bit at a time.',
       'Add the egg mixture back to the pot, scraping the sides with a rubber spatula.',
@@ -258,7 +258,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Continue cooking the dairy, whisking occasionally. Cook until the temperature reaches 165° F.',
       'Once the mixture is at temperature, pour through a fine mesh strainer into the bowl in the ice bath.',
@@ -329,7 +329,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Continue cooking the dairy, whisking occasionally. Cook until the temperature reaches 165° F.',
       'Once the mixture is at temperature, pour through a fine mesh strainer into the bowl in the ice bath.',
@@ -399,7 +399,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Continue cooking the dairy, whisking occasionally. Cook until the temperature reaches 165° F.',
       'Once the mixture is at temperature, pour through a fine mesh strainer into the bowl in the ice bath.',
@@ -470,7 +470,7 @@ export const recipes: Record<string, RecipeData> = {
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
       'While the dairy is heating up, peel the ripe bananas and put them in a metal mixing bowl or freezer gallon bag.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Prepare an ice bath by filling a large bowl with ice and water.',
       'Temper the egg yolks by whisking them in a bowl, then whisking in about a half cup of warm dairy a little bit at a time.',
       'Add the egg mixture back to the pot, scraping the sides with a rubber spatula.',
@@ -546,7 +546,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved. If not all the instant coffee dissolves right away, that is okay. Keep going.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved. If not all the instant coffee dissolves right away, that is okay. Keep going.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Temper the egg yolks by whisking them in a bowl, then whisking in about a half cup of warm dairy a little bit at a time.',
       'Add the egg mixture back to the pot, scraping the sides with a rubber spatula.',
@@ -616,7 +616,7 @@ export const recipes: Record<string, RecipeData> = {
       'Measure out and mix together all of the solids.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
       'Temper the egg yolks by whisking them in a bowl, then whisking in about a half cup of warm dairy a little bit at a time.',
       'Add the egg mixture back to the pot, scraping the sides with a rubber spatula.',
@@ -693,7 +693,7 @@ export const recipes: Record<string, RecipeData> = {
       'Add the peanut butter to a medium-sized mixing bowl.',
       'Add the dairy to a medium-sized, heavy-bottomed pot.',
       'Heat the dairy on the stove until warm, around 90° F.',
-      'Slowly add the solids to the pot, whisking as your pour to dissolve the solids. Continue whisking until dissolved.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved.',
       'Add about a 1/4 cup of the warm dairy to the peanut butter, gently whisking to integrate. Repeat this process until thin and runny.',
       'Add the peanut butter mixture back to the pot, scraping the sides with a rubber spatula.',
       'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
@@ -756,6 +756,91 @@ export const recipes: Record<string, RecipeData> = {
         name: 'Peanut Butter',
         quantity: 75,
         unit: 'g',
+      },
+    ],
+  },
+  tiramisu: {
+    name: 'Tiramisu',
+    subtitle: 'Inspired by the classic Italian dessert',
+    description:
+      'Mascarpone-coffee base swirled with espresso and liqueur soaked ladyfingers and cacao.',
+    estimatedMass: 930,
+    base: 'Tiramisu',
+    instructions: [
+      'Measure out and mix together all of the solids except cocao powder (save that for after churning).',
+      'Add all dairy except the mascarpone to a medium-sized, heavy-bottomed pot.',
+      'Heat the dairy on the stove until warm, around 90° F.',
+      'Slowly add the solids to the pot, whisking as you pour to dissolve the solids. Continue whisking until dissolved. If not all the instant coffee dissolves right away, that is okay. Keep going.',
+      'Prepare an ice bath by nesting a metal mixing bowl into a larger bowl that is filled with ice and water.',
+      'Continue cooking the mixture, whisking frequently. Cook until the temperature reaches 165° F.',
+      'Add the coffee liqueur right before you pull off heat. Add it sooner for more sublte alcohol flavor, add it after cooling for a stronger flavor.',
+      'Once the mixture is at temperature, pour through a fine mesh strainer into the bowl in the ice bath.',
+      'Whisk occasionally while the mixture cools to below 80° F.',
+      'Measure out the mascarpone in a small bowl. Add some of the chilled base to it and whisk to combine. Repeat until smooth then add back into the base.',
+      'Cover the bowl or transfer the mixture to a container. Store in the fridge to age, at least 4 hours and up to overnight.',
+      "Churn in an ice cream machine according to the manufacture's instructions, about 15-20 minutes.",
+      'Draw ice cream from the machine and into a freezer-safe container. Layer in the ladyfingers as you go and dust each layer with cocoa powder. Store in the freezer.',
+    ],
+    ingredients: [
+      {
+        name: 'Whole Milk',
+        quantity: 435,
+        unit: 'g',
+      },
+      {
+        name: 'Heavy Cream',
+        quantity: 340,
+        unit: 'g',
+      },
+      {
+        name: 'Sugar',
+        quantity: 69,
+        unit: 'g',
+      },
+      {
+        name: 'Dextrose',
+        quantity: 41,
+        unit: 'g',
+      },
+      {
+        name: 'Milk Powder',
+        quantity: 50,
+        unit: 'g',
+      },
+      {
+        name: 'Stabilizer Blend',
+        quantity: 1.4,
+        unit: 'g',
+      },
+      {
+        name: 'Salt',
+        quantity: 1.6,
+        unit: 'g',
+      },
+      {
+        name: 'Instant Coffee',
+        quantity: 5,
+        unit: 'g',
+      },
+      {
+        name: 'Mascarpone',
+        quantity: 45,
+        unit: 'g',
+      },
+      {
+        name: 'Coffee Liqueur',
+        quantity: 12,
+        unit: 'g',
+      },
+      {
+        name: 'Soaked Ladyfingers',
+        quantity: 3.5,
+        unit: '% of final weight',
+      },
+      {
+        name: 'Cocoa',
+        quantity: 0.5,
+        unit: '% of final weight',
       },
     ],
   },
@@ -884,6 +969,15 @@ export const ingredients: Record<string, Ingredient> = {
     },
     category: 'finishing' as IngredientCategory,
   },
+  vanillaPaste: {
+    name: 'Vanilla Paste',
+    description:
+      'Blend of vanilla bean, water, and alcohol. Bean flecks continue to extract so add while hot for a more intense flavor. Use something high quality!',
+    data: {
+      water: 0.5, // totally made this up idk
+    },
+    category: 'other' as IngredientCategory,
+  },
   cocoaPowder: {
     name: 'Cocoa Powder',
     description:
@@ -895,6 +989,17 @@ export const ingredients: Record<string, Ingredient> = {
       otherSolidsNonfat: 0.786,
     },
     category: 'solids' as IngredientCategory,
+  },
+  cocoa: {
+    name: 'Cocoa',
+    description: 'Cocoa powder... as a mix-in.',
+    data: {
+      pac: -0.42,
+      pod: -0.5,
+      otherFat: 0.214,
+      otherSolidsNonfat: 0.786,
+    },
+    category: 'drawing' as IngredientCategory,
   },
   fructose: {
     name: 'Fructose',
@@ -1204,5 +1309,81 @@ export const ingredients: Record<string, Ingredient> = {
     description:
       'A delicious, yellow, and slightly radioactive fruit. The ideal way to flavor ice cream with them is by steeping, not blending. They should be VERY ripe.',
     category: 'steeping' as IngredientCategory,
+  },
+  mascarpone: {
+    name: 'Mascarpone',
+    description: 'Italian cream cheese',
+    data: {
+      pac: 0.279,
+      pod: 0.042,
+      milkFat: 0.0476,
+      milkSolidsNonfat: 0.4824,
+      water: 0.47,
+    },
+    category: 'finishing' as IngredientCategory,
+  },
+  coffeeLiqueur: {
+    name: 'Coffee Liqueur',
+    description:
+      'Usually a spirit steeped with fresh coffee, then diluted and sweetened. Worth using something good quality like Mr Blacks or St George.',
+    data: {
+      // Underbelly data for Kahlua
+      pac: 2.89,
+      pod: 0.36,
+      water: 0.44,
+      sugars: 0.36,
+    },
+    category: 'other' as IngredientCategory,
+  },
+  soakedLadyfingers: {
+    name: 'Soaked Ladyfingers',
+    description:
+      'Traditional ladyfingers soaked in a blend of espresso, sugar, and alcohol to make them cakey without being icy.',
+    preparation: {
+      ingredients: [
+        {
+          name: 'Ladyfingers',
+          quantity: 40,
+          unit: 'g',
+        },
+        {
+          name: 'Espresso',
+          quantity: 75,
+          unit: 'g',
+        },
+        {
+          name: 'Brown Sugar',
+          quantity: 25,
+          unit: 'g',
+        },
+        {
+          name: 'Amaretto',
+          quantity: 15,
+          unit: 'g',
+        },
+        {
+          name: 'Coffee Liqueur',
+          quantity: 20,
+          unit: 'g',
+        },
+        {
+          name: 'Salt',
+          quantity: 0.3,
+          unit: 'g',
+        },
+      ],
+      instructions: [
+        'Measure out and combine the brown sugar and salt.',
+        'Ideally, brew fresh espresso. Pulling two shots should get you there. Otherwise, cold brew concentrate may work.',
+        'Dissolve solids in the coffee while it is still hot.',
+        'Measure and combine the two liqueurs.',
+        'Once the espresso syrup is cool, add the liqueurs and stir to combine.',
+        'When it is time to actually use them in the ice cream, cut the ladyfingers into quarters.',
+        'Dunk each ladyfinger piece into the soak for ~2 seconds before adding to churned ice cream.',
+      ],
+      description:
+        'Traditional ladyfingers soaked in a blend of espresso, sugar, and liqueur to make them flavorful and cakey without being icy. I like to prep this right before, or while, I churn the ice cream I am adding it to. Using good quality liqueurs goes a long way. Undersoaking will result in the chunks being bready and tough when frozen. Oversoaking will result in the chunks getting mushy. Try the extremes for a couple chunks, you may have a preference.',
+    },
+    category: 'drawing' as IngredientCategory,
   },
 };
